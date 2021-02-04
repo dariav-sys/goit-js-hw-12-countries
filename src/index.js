@@ -4,7 +4,7 @@ import fetchService from './js/fetch-service.js';
 
 import _ from 'lodash';
 import refs from './js/refs';
-console.log(refs);
+// console.log(refs);
 
 // $('.class').on('load',function(){})
 
