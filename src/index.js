@@ -5,10 +5,12 @@ import debounce from 'lodash.debounce';
 
 const input = document.querySelector('input');
 
-function searchCountry(event) {
+
+
+input.addEventListener('input', debounce(function searchCountry(event) {
   const inputValue = event.target.value;
 //   console.log(fetchService);
   fetchService(inputValue);
-}
+}, 500));
 
-input.addEventListener('input', debounce(searchCountry, 500));
+
