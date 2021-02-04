@@ -1,4 +1,4 @@
-import markup from './markup.js'
+import markup from './markup.js';
 
 export default function fetchService(searchQuery) {
   const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
@@ -6,5 +6,14 @@ export default function fetchService(searchQuery) {
   return fetch(url)
     .then(res => res.json())
     .then(data => markup(data))
-    .catch(() => console.log("There's no such a country"));
+    //   if ((data.message = 'Not found')) {
+    //     error({
+    //       text: 'Wrong query.',
+    //       delay: 1000,
+    //     });
+        //   } else 
+       
+        
+    // })
+    .catch(err => console.log(err));
 }

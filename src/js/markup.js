@@ -9,11 +9,13 @@ import refs from './refs.js';
 // const container = document.querySelector('.container');
 
 export default function markup(data) {
-  data.length >= 2 && data.length <= 10
-    ? (refs.container.innerHTML = countriesList(data))
-    : data.length > 10
-    ? errorMessage()
-    : (refs.container.innerHTML = data.map(country => updateCountryMarkup(country)));
+  if (data.length > 1 && data.length <= 10)
+    refs.container.innerHTML = countriesList(data);
+  else if (data.length > 10) errorMessage();
+  else
+    refs.container.innerHTML = data.map(country =>
+      updateCountryMarkup(country),
+    );
 }
 
 function errorMessage() {
