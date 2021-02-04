@@ -4,12 +4,19 @@ import '@pnotify/core/dist/PNotify.css';
 
 import updateCountryMarkup from '../templates/countries.hbs';
 import countriesList from '../templates/countries-list.hbs';
+// import refs from '../js/refs.js';
 
-export default fetchCountries;
+export default fetchService;
 
 const container = document.querySelector('.container');
+// const input = document.querySelector('input')
 
-function fetchCountries(searchQuery) {
+// const refs = {
+//   container: document.querySelector('.container'),
+//   input: document.querySelector('input')
+// }
+
+function fetchService(searchQuery) {
   const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
 
   return fetch(url)
@@ -21,8 +28,7 @@ function fetchCountries(searchQuery) {
 function markup(data) {
   if (data.length >= 2 && data.length <= 10) {
     container.innerHTML = countriesList(data);
-  } else if (data.length > 10) {
-    container.innerHTML = '';
+  } else if (data.length > 10) {    
     errorMessage();
   } else {
     // console.log(data);

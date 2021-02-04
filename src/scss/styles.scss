@@ -26,14 +26,6 @@ body {
   display: flex;
 }
 
-.wrapper {
-  margin: 20px;
-}
-.language {
-  display: inline-block;
-  align-items: flex-start;
-}
-
 .numeric-data {
   font-style: italic;
   font-weight: normal;
@@ -51,7 +43,7 @@ body {
 
 .container {
   display: block;
-  margin: 0 auto;
+  margin: 50px;
 }
 
 input {
