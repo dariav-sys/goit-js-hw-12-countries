@@ -4,17 +4,12 @@ import '@pnotify/core/dist/PNotify.css';
 
 import updateCountryMarkup from '../templates/countries.hbs';
 import countriesList from '../templates/countries-list.hbs';
-// import refs from '../js/refs.js';
+
 
 export default fetchService;
 
 const container = document.querySelector('.container');
-// const input = document.querySelector('input')
 
-// const refs = {
-//   container: document.querySelector('.container'),
-//   input: document.querySelector('input')
-// }
 
 function fetchService(searchQuery) {
   const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
