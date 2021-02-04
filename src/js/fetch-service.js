@@ -5,11 +5,9 @@ import '@pnotify/core/dist/PNotify.css';
 import updateCountryMarkup from '../templates/countries.hbs';
 import countriesList from '../templates/countries-list.hbs';
 
-
 export default fetchService;
 
 const container = document.querySelector('.container');
-
 
 function fetchService(searchQuery) {
   const url = `https://restcountries.eu/rest/v2/name/${searchQuery}`;
@@ -21,7 +19,6 @@ function fetchService(searchQuery) {
 }
 
 function markup(data) {
- 
   data.length >= 2 && data.length <= 10
     ? (container.innerHTML = countriesList(data))
     : data.length > 10
